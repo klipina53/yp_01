@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="yp02.Item.PartnerItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:yp02.Item"
+             mc:Ignorable="d"  Background="White">
+    <Border>
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10">
+            <Label Content="тип | наименование партнёра" x:Name="TypeName" FontSize="20"/>
+            <Label Content="Директор" FontSize="15"/>
+            <Label Content="+7 223 322 22 32" x:Name="Phone" FontSize="15"/>
+            <Label Content="Рейтинг: 10" x:Name="Rating" FontSize="15"/>
+        </StackPanel>
+        <Label Content="10%" x:Name="Sale" FontSize="20" Grid.Column="1" HorizontalAlignment="Right" Margin="10"/>
+    </Grid>
+    </Border>
+</UserControl>
