@@ -28,6 +28,6 @@ namespace yp02.Classes
             this.Phone = phone;
             this.Email = email;
             this.Rating = rating;
-        }
+        } 
     }
 }
