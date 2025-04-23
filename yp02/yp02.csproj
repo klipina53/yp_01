@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Item\MainPartners.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Item\PartnerItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -68,6 +72,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Partners.cs" />
+    <Compile Include="Item\MainPartners.xaml.cs">
+      <DependentUpon>MainPartners.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Item\PartnerItem.xaml.cs">
       <DependentUpon>PartnerItem.xaml</DependentUpon>
     </Compile>
