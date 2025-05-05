@@ -78,6 +78,7 @@
     <Compile Include="Classes\Required_Material.cs" />
     <Compile Include="Classes\Suppliers.cs" />
     <Compile Include="Classes\Type_Partner.cs" />
+    <Compile Include="Classes\Type_Product.cs" />
     <Compile Include="Item\MainPartners.xaml.cs">
       <DependentUpon>MainPartners.xaml</DependentUpon>
     </Compile>
