@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using yp02.Classes.Context;
 
 namespace yp02.Pages.Partner
 {
@@ -20,9 +21,24 @@ namespace yp02.Pages.Partner
     /// </summary>
     public partial class History : Page
     {
-        public History()
+        Contexts Contexts = new Contexts();
+
+        public History(Int64 id)
         {
             InitializeComponent();
+            loadItemHistory(id);
         }
+
+        private void loadItemHistory(Int64 id)
+        {
+            parent.Children.Clear();
+            foreach (var item in Contexts.Partner_Products.Where(x => x.partner == id).ToList())
+            {
+                parent.Children.Add(new ItemHistory(item));
+            }
+        }
+
+        private void backPage(object sender, RoutedEventArgs e) => MainWindow.mainWindow.frame.Navigate(new Main());
     }
 }
+

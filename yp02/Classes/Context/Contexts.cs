@@ -1,18 +1,28 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace yp02.Classes.Context
 {
     public class Contexts : DbContext
     {
-        public static readonly string StrConnect = "server=localhost;port=3303;uid=root;database=base2;";
-        public static MySqlServerVersion mySqlServerVersion = new MySqlServerVersion(new System.Version(8, 0, 11));
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySql(
+                    "server=127.0.0.1;port=3306;uid=root;database=base2;",
+                    new MySqlServerVersion(new Version(8, 0, 11)) // Убедитесь, что версия соответствует вашей
+                );
+            }
+        }
+        
         public DbSet<Materials> Materials { get; set; }
         public DbSet<Partner_Products> Partner_Products { get; set; }
         public DbSet<Partners> Partners { get; set; }
@@ -24,14 +34,7 @@ namespace yp02.Classes.Context
         public DbSet<GetChanges> GetChanges { get; set; }
         public Contexts() { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<GetChanges>().HasNoKey();
-            base.OnModelCreating(modelBuilder);
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseMySql(StrConnect, mySqlServerVersion);
+      
     }
 }
-}
+

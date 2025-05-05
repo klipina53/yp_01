@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using yp02.Classes.Context;
+using yp02.Classes;
 
 namespace yp02.Pages.Partner
 {
@@ -20,9 +22,15 @@ namespace yp02.Pages.Partner
     /// </summary>
     public partial class ItemHistory : UserControl
     {
-        public ItemHistory()
+        Contexts Contexts = new Contexts();
+
+        public ItemHistory(Partner_Products partner_Products)
         {
             InitializeComponent();
+            product.Content = Contexts.Products.ToList().Find(x => x.id == partner_Products.product).name;
+            partner.Content = Contexts.Partners.ToList().Find(x => x.id == partner_Products.partner).nameCompany;
+            countProduct.Content += partner_Products.countProduct.ToString();
+            dateSell.Content += partner_Products.dateSell.ToString("dd.MM.yyyy");
         }
     }
 }
