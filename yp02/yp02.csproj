@@ -170,7 +170,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Partner\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Partner\Item.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Partner\ItemHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,8 +188,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Partner\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Partner\Item.xaml.cs">
       <DependentUpon>Item.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Partner\ItemHistory.xaml.cs">
+      <DependentUpon>ItemHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Partner\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
