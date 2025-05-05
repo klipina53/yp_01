@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Classes\Materials.cs" />
     <Compile Include="Classes\Partners.cs" />
+    <Compile Include="Classes\Partner_Products.cs" />
     <Compile Include="Item\MainPartners.xaml.cs">
       <DependentUpon>MainPartners.xaml</DependentUpon>
     </Compile>
