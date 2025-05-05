@@ -71,6 +71,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\aterials.cs" />
     <Compile Include="Classes\Partners.cs" />
     <Compile Include="Item\MainPartners.xaml.cs">
       <DependentUpon>MainPartners.xaml</DependentUpon>
