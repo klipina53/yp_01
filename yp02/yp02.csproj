@@ -71,6 +71,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\GetChanges.cs" />
     <Compile Include="Classes\Materials.cs" />
     <Compile Include="Classes\Partners.cs" />
     <Compile Include="Classes\Partner_Products.cs" />
